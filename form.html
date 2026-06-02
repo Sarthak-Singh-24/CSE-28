@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprehensive HTML Form</title>
+</head>
+<body>
+
+    <h2>User Registration & Preferences</h2>
+
+    <form action="/submit-data" method="POST" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <p>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required autofocus>
+            </p>
+
+            <p>
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="pass" minlength="8" required>
+            </p>
+
+            <p>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="99" value="25">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Selection & Preferences</legend>
+
+            <p>
+                Membership Level:<br>
+                <input type="radio" id="basic" name="tier" value="basic" checked>
+                <label for="basic">Basic</label><br>
+                <input type="radio" id="pro" name="tier" value="pro">
+                <label for="pro">Pro</label>
+            </p>
+
+            <p>
+                Interests:<br>
+                <input type="checkbox" id="coding" name="interest" value="coding">
+                <label for="coding">Coding</label>
+                <input type="checkbox" id="music" name="interest" value="music">
+                <label for="music">Music</label>
+            </p>
+
+            <p>
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <optgroup label="North America">
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="uk">UK</option>
+                        <option value="germany">Germany</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <p>
+                <label for="browser">Preferred Browser:</label>
+                <input list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                    <option value="Edge">
+                </datalist>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Tools</legend>
+
+            <p>
+                <label for="volume">Skill Level (0-100):</label>
+                <input type="range" id="volume" name="volume" min="0" max="100" step="5">
+            </p>
+
+            <p>
+                <label for="color">Profile Theme Color:</label>
+                <input type="color" id="color" name="color" value="#ff0000">
+            </p>
+
+            <p>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </p>
+
+            <p>
+                <label for="resume">Upload Resume (PDF only):</label>
+                <input type="file" id="resume" name="resume" accept=".pdf">
+            </p>
+
+            <p>
+                <label for="bio">Short Bio:</label><br>
+                <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Tell us about yourself..."></textarea>
+            </p>
+
+            <input type="hidden" name="user_id" value="12345">
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Submit Registration">
+        <input type="reset" value="Clear Form">
+        <button type="button" onclick="alert('Button clicked!')">Click Me</button>
+
+    </form>
+
+</body>
+</html>
